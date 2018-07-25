@@ -1,5 +1,7 @@
 package mypack;
 
+import mypack.pojo.Book;
+
 public class ShowCartItem {
     private Book mBook;
     private int mCount;

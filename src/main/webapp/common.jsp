@@ -7,4 +7,4 @@
 --%>
 <%@ page import="mypack.*" %>
 
-<jsp:useBean id="bookBean" class="mypack.BookDB" scope="session" />
+<%--<jsp:useBean id="bookBean" class="mypack.dao.BookDB" scope="session" />--%>

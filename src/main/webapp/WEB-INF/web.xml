@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+		  http://java.sun.com/xml/ns/javaee/web-app_4_0.xsd"
+           version="4.0">
+
+    <!--<resource-ref>-->
+        <!--<description>DB Connection</description>-->
+        <!--<res-ref-name>jdbc/BookDB</res-ref-name>-->
+        <!--<res-type>javax.sql.DataSource</res-type>-->
+        <!--<res-auth>Container</res-auth>-->
+    <!--</resource-ref>-->
+
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath:applicationContext.xml</param-value>
+    </context-param>
+    
+    <!--<listener>-->
+        <!--<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>-->
+    <!--</listener>-->
+
+
+    <!--<servlet>-->
+        <!--<servlet-name>springmvc</servlet-name>-->
+        <!--<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>-->
+        <!--<init-param>-->
+            <!--<param-name>contextConfigLocation</param-name>-->
+            <!--<param-value>classpath:springmvc-servlet.xml</param-value>-->
+        <!--</init-param>-->
+    <!--</servlet>-->
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>springmvc</servlet-name>-->
+        <!--<url-pattern>/</url-pattern>-->
+    <!--</servlet-mapping>-->
+
+    <filter>
+        <filter-name>ipFilter</filter-name>
+        <filter-class>mypack.NoteFilter</filter-class>
+
+        <init-param>
+            <param-name>ip</param-name>
+            <param-value>111.111.111.111</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>ipFilter</filter-name>
+        <url-pattern>/catagory.jsp</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>textFilter</filter-name>
+        <filter-class>mypack.ReplaceTextFilter</filter-class>
+
+        <init-param>
+            <param-name>search</param-name>
+            <param-value>"Java"</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>textFilter</filter-name>
+        <url-pattern>/catagory.jsp</url-pattern>
+    </filter-mapping>
+
+    <welcome-file-list>
+        <welcome-file>bookstore.jsp</welcome-file>
+    </welcome-file-list>
+
+
+</web-app>

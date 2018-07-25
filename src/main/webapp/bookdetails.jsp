@@ -1,4 +1,4 @@
-<%--
+<%@ page import="mypack.pojo.Book" %><%--
   Created by IntelliJ IDEA.
   User: lhao
   Date: 18-7-14

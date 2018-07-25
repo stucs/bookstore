@@ -1,12 +1,26 @@
-package mypack;
+package mypack.pojo;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "book")
 public class Book {
+
+    @Id
+    @Column(name = "id")
     private String mBookId;
+    @Column(name = "name")
     private String mBookName;
-    private String mWriter;
+    @Column(name = "price")
     private float mPrice;
+    @Column(name = "writer")
+    private String mWriter;
 
 
+    public Book() {}
     public Book(String id, String name, float price, String writer) {
         mBookId = id;
         mBookName = name;
